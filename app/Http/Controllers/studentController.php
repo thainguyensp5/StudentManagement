@@ -151,6 +151,13 @@ class studentController extends Controller
         return redirect('/');
     }
 
+    public function deleteStudents(Request $request)
+    {
+        $ids = $request->ids;
+        Student::whereIn('id',$ids)->delete();
+        return redirect('/');
+    }
+
     public function search(Request $request){
         $search = $request->get('search');
         $posts = DB::table('students')->where('firstName', 'like', '%'.$search.'%')->paginate(5);

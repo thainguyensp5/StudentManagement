@@ -30,3 +30,4 @@ Route::post('/upload', "uploadController@uploadFile")->name('uploadFile');
 
 Route::get('/search', "studentController@search");
 // Route::get('/search',array('as'=>'search','uses'=>'studentController@search'));
+Route::delete('/delete-students','studentController@deleteStudents');
